@@ -1,0 +1,67 @@
+.tooltip {
+  position: absolute;
+  background: rgba(0,0,0,0.66);
+  width: 210px;
+  color: #FFF;
+  padding: 15px 20px;
+  display: none;
+  &:after {
+    position: absolute;
+    top:-8px;
+    margin-left: -4px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+
+    border-bottom: 8px solid rgba(0,0,0,0.66);
+    content: "";
+  }
+  h2 {
+    margin: 0 0 15px 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+    margin: -10px 0 0 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      padding-left: 25px;
+      font-size: 14px;
+      position: relative;
+      margin: 5px 0;
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 11px;
+        height: 11px;
+        border: 2px solid transparent;
+        content: "";
+      }
+      &.wolne {
+        &:after {
+          border-color: $blue;
+        }
+      }
+      &.zarezerwowane {
+        &:after {
+          border-color: #eb600a;
+        }
+      }
+      &.sprzedane {
+        &:after {
+          border-color: #e80000;
+        }
+      }
+    }
+  }
+}

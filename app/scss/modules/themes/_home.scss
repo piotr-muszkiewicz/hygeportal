@@ -1,0 +1,650 @@
+.promobox1 {
+  position: absolute;
+  right: 60px;
+  top: 150px;
+  max-width: 200px;
+  width: 100%;
+  display: block;
+  z-index: 100;
+  @include breakpoint(tablet) {
+    top: 85px;
+    right: 20px;
+    max-width: 150px;
+  }
+  .only-desktop {
+    display: block;
+  }
+  .only-mobile {
+    display: none;
+  }
+}
+
+.home-banner {
+  margin: 40px 0 -55px 0;
+  text-align: center;
+  @include breakpoint(tablet) {
+    margin: 20px 0 -25px 0;
+  }
+  img {
+    display: inline-block;
+    max-width: 100%;
+  }
+  .only-desktop {
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+  .only-mobile {
+    display: none;
+    @include breakpoint(mobile) {
+      display: block;
+      margin: 20px 0 -0px 0;
+    }
+  }
+}
+.slider {
+  position: relative;
+
+  &__bg {
+    height: 915px;
+    background-size: cover;
+    background-position: center;
+    max-height: 100vh;
+    min-height: 500px;
+    @include breakpoint(tablet) {
+      height: 757px;
+    }
+    @include breakpoint(mobile) {
+      height: 628px;
+    }
+  }
+  &__text {
+    position: absolute;
+    bottom: 0;
+    left: 130px;
+    right: 130px;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 90;
+    @include breakpoint(tablet) {
+      left: 0;
+      right: 0;
+    }
+    &__inner {
+      text-align: center;
+      width: 100%;
+      color: #FFF;
+      @include breakpoint(tablet) {
+        max-width: 650px;
+        margin: 0 auto;
+      }
+      @include breakpoint(mobile) {
+        max-width: 245px;
+      }
+    }
+
+    h2 {
+      font-size: 48px;
+      text-transform: uppercase;
+      position: relative;
+      @include breakpoint(tablet) {
+        font-size: 36px;
+        line-height: 44px;
+      }
+      @include breakpoint(mobile) {
+        font-size: 30px;
+        line-height: 36px;
+      }
+      &:after {
+        position: absolute;
+        bottom: -22px;
+        height: 3px;
+        background: #FFF;
+        width: 650px;
+        left: 50%;
+        margin-left: -325px;
+        content: "";
+        @include breakpoint(tablet) {
+          width: 570px;
+          margin-left: -285px;
+        }
+        @include breakpoint(mobile) {
+          width: 244px;
+          margin-left: -122px;
+          bottom: -13px;
+        }
+      }
+    }
+    h3 {
+      font-size: 28px;
+      @include breakpoint(tablet) {
+        font-size: 24px;
+      }
+      @include breakpoint(mobile) {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+  &__btns {
+    margin: 61px 0 0 0;
+    @include breakpoint(tablet) {
+      margin: 30px 0 0 0;
+    }
+    @include breakpoint(mobile) {
+      margin: 10px 0 0 0;
+    }
+    a {
+      margin: 0 10px;
+      @include breakpoint(mobile) {
+        margin: 5px 0;
+      }
+    }
+  }
+  .owl-prev,
+  .owl-next {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    top:50%;
+    margin-top: -30px;
+    position: absolute;
+    z-index: 98;
+    text-indent: -9999px;
+    cursor: pointer;
+    transition: all 0.3s;
+    @include breakpoint(tablet) {
+      display: none;
+    }
+    &:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+  }
+  .owl-prev {
+    background-image: url("../images/slider-arrow-prev.png");
+    left: 60px;
+  }
+  .owl-next {
+    background-image: url("../images/slider-arrow-next.png");
+    right: 60px;
+  }
+
+  .owl-dots {
+    position: absolute;
+    right: 60px;
+    bottom: 50px;
+    z-index: 98;
+    @include breakpoint(tablet) {
+      right: 14px;
+      bottom: 31px;
+    }
+    .owl-dot {
+      width: 2px;
+      height: 30px;
+      background: #FFF;
+      margin: 0 3px;
+      display: inline-block;
+      vertical-align: bottom;
+      transition: all 0.3s;
+      &.active {
+        height: 40px;
+      }
+    }
+  }
+
+  .dynamic-white {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    width: 176px;
+    height: 43px;
+    z-index: 98;
+    @include breakpoint(tablet) {
+      bottom: 37px;
+      left: 7px;
+      width: 193px;
+      height: 46px;
+    }
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+  .scroll-to {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    background: url("../images/arrow-down-white.png");
+    width: 57px;
+    height: 28px;
+    margin-left: -28px;
+    z-index: 98;
+    animation: pulse_scroll 2s infinite;
+    @include breakpoint(tablet) {
+      bottom: 34px;
+    }
+  }
+}
+@keyframes pulse_scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.our-offer {
+  padding: 50px 0;
+  @include breakpoint(tablet) {
+    padding: 30px 0;
+  }
+  @include breakpoint(mobileonly) {
+    padding: 22px 0;
+  }
+  h2 {
+    color: $blue;
+    margin: 0 0 24px 0;
+    font-size: 38px;
+    text-transform: uppercase;
+    @include breakpoint(tablet) {
+      font-size: 30px;
+    }
+    @include breakpoint(mobileonly) {
+      line-height: 36px;
+    }
+  }
+  &__outer {
+    overflow: hidden;
+    text-align: center;
+  }
+  &__inner {
+    position: relative;
+    display: inline-block;
+    padding: 0 45px;
+    @include breakpoint(mobileonly) {
+      padding: 0;
+      max-width: 300px;
+    }
+    &:after {
+      width: 1000px;
+      height: 1px;
+      left: 100%;
+      content: "";
+      top:50%;
+      position: absolute;
+      background: $blue;
+    }
+    &:before {
+      width: 1000px;
+      height: 1px;
+      right: 100%;
+      content: "";
+      top:50%;
+      position: absolute;
+      background: $blue;
+    }
+  }
+  &__btns {
+    a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin: 0 15px;
+      @include breakpoint(tablet) {
+        margin: 0 5px;
+      }
+      @include breakpoint(mobileonly) {
+        margin:0 0 6px 0;
+      }
+    }
+  }
+}
+
+.home-boxs {
+  overflow: hidden;
+  position: relative;
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f5f5f5;
+    height: 440px;
+    content: "";
+    @include breakpoint(tablet) {
+      height: 290px;
+    }
+    @include breakpoint(tablet) {
+      height: 240px;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  .home-box {
+    &__left {
+      h3 {
+        margin: 0;
+        font-size: 22px;
+        @include breakpoint(tablet) {
+          font-size: 18px;
+        }
+        @include breakpoint(mobile) {
+          font-size: 16px;
+        }
+      }
+      h2 {
+        line-height: 70px;
+        margin: 0 0 24px 0;
+        font-size: 75px;
+        color: $blue;
+        @include breakpoint(tablet) {
+          font-size: 61px;
+          line-height: 61px;
+        }
+        @include breakpoint(mobile) {
+          font-size: 49px;
+          line-height: 49px;
+        }
+      }
+      h4 {
+        font-size: 28px;
+        line-height: 32px;
+        @include breakpoint(tablet) {
+          font-size: 24px;
+          line-height: 30px;
+        }
+        @include breakpoint(mobile) {
+          font-size: 22px;
+          line-height: 28px;
+        }
+      }
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 24px 0;
+        @include breakpoint(mobile) {
+          font-size: 14px;
+          line-height: 22px;
+        }
+        a {
+          color: $blue;
+        }
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          font-size: 16px;
+          padding: 0 0 8px 21px;
+          position: relative;
+          @include breakpoint(mobileonly) {
+            font-size: 14px;
+          }
+          &:after {
+            position: absolute;
+            left: 4px;
+            top: 9px;
+            background: $blue;
+            width: 6px;
+            height: 9px;
+            content: "";
+            @include breakpoint(mobileonly) {
+              top: 5px;
+            }
+          }
+        }
+      }
+    }
+    &__right {
+      position: relative;
+      &__border {
+        display: inline-block;
+        border: 4px solid $blue;
+        h2 {
+          font-size: 90px;
+          line-height: 90px;
+          margin: 0 0;
+          color: $blue;
+          @include breakpoint(tablet) {
+            font-size: 70px;
+            line-height: 70px;
+          }
+          @include breakpoint(mobile) {
+            font-size: 50px;
+            line-height: 50px;
+          }
+        }
+        h3 {
+          font-size: 30px;
+          line-height: 30px;
+          color: $blue;
+          margin: 5px 0 11px 0;
+          text-transform: uppercase;
+          @include breakpoint(tablet) {
+            font-size: 24px;
+            line-height: 32px;
+          }
+          @include breakpoint(mobile) {
+            font-size: 18px;
+            line-height: 20px;
+            margin: 0 0 7px 0;
+          }
+        }
+        h4 {
+          font-size: 18px;
+          line-height: 24px;
+          margin: 0 0;
+          @include breakpoint(tablet) {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          @include breakpoint(tablet) {
+            font-size: 14px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+    &__box1 {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background: url("../images/home-bg.png") 42px 32px no-repeat;
+      margin: 90px 0 193px 0;
+      padding-bottom: 80px;
+      @include breakpoint(tablet) {
+        margin: 45px 0 125px 0;
+        display: block;
+        float: left;
+        width: 100%;
+        background-size: 370px auto;
+        background-position: 8px 277px;
+      }
+      @include breakpoint(mobile) {
+        margin: 33px 0 25px 0;
+        background: none;
+        padding: 0;
+      }
+
+      .home-box__left {
+        width: 480/1250*100%;
+        margin: 50px 0 0 0px;
+        padding: 0 50px 0 0;
+        @include breakpoint(laptop) {
+          margin-top: 0;
+        }
+        @include breakpoint(tablet) {
+          width: 100%;
+        }
+        @include breakpoint(mobile) {
+          padding: 0;
+        }
+      }
+      .home-box__right {
+        width: 770/1250*100%;
+        margin: 0 0 0 0;
+        @include breakpoint(tablet) {
+          width: 470px;
+          float: right;
+        }
+        @include breakpoint(mobileonly) {
+          width: 237px;
+        }
+        .btn--blue {
+          float: right;
+          margin: 16px 0 0 0;
+          @include breakpoint(mobileonly) {
+            float: left;
+            margin: 23px 0 0 -56px;
+          }
+        }
+        &__border {
+          position: absolute;
+          left: -263px;
+          bottom: -149px;
+          width: 340px;
+          height: 290px;
+          padding: 34px 42px;
+          z-index: 10;
+          @include breakpoint(tablet) {
+            left: -194px;
+            bottom: -133px;
+            width: 256px;
+            height: 245px;
+            padding: 25px 31px;
+          }
+          @include breakpoint(mobile) {
+            position: relative;
+            display: block;
+            margin: -26px 0 0 -45px;
+            left: auto;
+            bottom: auto;
+            width: 192px;
+            height: auto;
+            padding: 16px 19px;
+          }
+        }
+      }
+      &.no-margin {
+        margin: 0 !important;
+        padding: 40px 0 0 0 !important;
+        background: none !important;
+        .home-box__left {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(-70px);
+          transition: all 0.5s 0.5s;
+          margin-top: 25px;
+          h2 {
+            font-size: 40px;
+            line-height: 44px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .active {
+          .home-box__left {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+    &__box2 {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 222px;
+      flex-wrap: wrap;
+      @include breakpoint(tablet) {
+        clear: both;
+      }
+      @include breakpoint(mobile) {
+        display: block;
+        padding-bottom: 181px;
+      }
+      .home-box__left {
+        width: 490/1250*100%;
+        order: 2;
+        margin: 36px 156/1250*100% 0 0;
+        position: relative;
+        z-index: 10;
+        @include breakpoint(laptop) {
+          margin-top: 0;
+        }
+        @include breakpoint(tablet) {
+          margin: 12px 0 0 0;
+          width: 54%;
+        }
+        @include breakpoint(mobile) {
+          width: 100%;
+        }
+        h2 {
+          font-size: 48px;
+          line-height: 48px;
+          text-transform: uppercase;
+          @include breakpoint(tablet) {
+            font-size: 36px;
+          }
+          @include breakpoint(mobile) {
+            font-size: 30px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+      .home-box__right {
+        width: 450/1250*100%;
+        order: 1;
+        position: relative;
+        z-index: 10;
+        @include breakpoint(tablet) {
+          width: 39%;
+        }
+        @include breakpoint(mobile) {
+          width: 236px;
+          margin: 38px 0 0 0;
+        }
+        &__border {
+          position: absolute;
+          right: -397px;
+          bottom: -113px;
+          width: 434px;
+          height: 252px;
+          padding: 55px 20px 0 87px;
+          @include breakpoint(tablet) {
+            right: -296px;
+            bottom: -148px;
+            width: 333px;
+            height: 183px;
+            padding: 33px 0px 0 45px;
+          }
+          @include breakpoint(mobile) {
+            right: auto;
+            left: 52px;
+            bottom: -134px;
+            width: 237px;
+            height: auto;
+            padding: 32px 0 25px 23px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

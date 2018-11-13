@@ -1,0 +1,195 @@
+.popup {
+  position: fixed;
+  overflow: auto;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.77);
+  display: none;
+  padding: 15px;
+  @include breakpoint(tablet) {
+    padding: 50px 15px;
+  }
+  &__inner {
+    transition: all 0.3s;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    &.open {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .popup-close {
+    position: absolute;
+    right: 8px;
+    top: -37px;
+    background: url("../images/close.png");
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.house-popup {
+  .popup__inner {
+    max-width: 1435px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFF;
+    padding: 90px 93px;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(monitor) {
+      padding: 40px;
+    }
+    @include breakpoint(mobile) {
+      display: block;
+      padding: 20px;
+    }
+  }
+  &__left {
+    width: 610/1250*100%;
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+  }
+  &__right {
+    width: 575/1250*100%;
+    padding-top: 57px;
+    @include breakpoint(mobile) {
+      width: 100%;
+      padding-top: 20px;
+      overflow: hidden;
+    }
+  }
+  .type-number {
+    display: inline-block;
+    padding: 4px 0 0 0;
+    background: $blue;
+    color: #FFF;
+    text-align: center;
+    width: 49px;
+    height: 59px;
+    font-family: 'Abril Fatface';
+    font-size: 14px;
+    strong {
+      font-size: 30px;
+      line-height: 30px;
+      display: block;
+      font-weight: normal;
+    }
+  }
+  .desc {
+    clear: both;
+    position: relative;
+    margin-top: 25px;
+    &__left {
+      width: 335/575*100%;
+      display: inline-block;
+      vertical-align: top;
+      @include breakpoint(laptop) {
+        width: 100%;
+      }
+      .title {
+        font-size: 24px;
+        color: #565656;
+        padding-bottom: 18px;
+        strong {
+          color: #000;
+        }
+      }
+      table {
+        width: 100%;
+        max-width: 260px;
+        th {
+          font-weight: normal;
+          text-align: left;
+          width: 130px;
+        }
+        td {
+          font-weight: bold;
+        }
+        th,td {
+          padding: 10px 0;
+          font-size: 16px;
+          border-bottom: 1px solid #e1e1e1;
+        }
+      }
+    }
+    &__right {
+      width: 235/575*100%;
+      float: right;
+      text-align: right;
+      @include breakpoint(laptop) {
+        width: 100%;
+        text-align: left;
+        margin-top: 20px;
+      }
+      .btn {
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .price {
+        text-align: center;
+        font-family: "Abril Fatface";
+        font-size: 30px;
+        display: inline-block;
+        margin-bottom: 30px;
+        @include breakpoint(laptop) {
+          display: block;
+          text-align: left;
+        }
+        span {
+          display: block;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .pow {
+    position: absolute;
+    right: 0;
+    top:0;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .type {
+    font-size: 12px;
+    color: #565656;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 0 0 0;
+  }
+  .name {
+    font-size: 24px;
+    font-family: 'Abril Fatface';
+    text-transform: uppercase;
+  }
+  .text {
+    font-size: 13px;
+    color: #565656;
+  }
+  .text-long {
+    padding-top: 0px;
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      color: #565656;
+      margin: 30px 0;
+    }
+  }
+  .btn--pdf {
+    float: right;
+    @include breakpoint(mobileonly) {
+      padding: 15px 43px 15px 13px;
+      display: block;
+      float: none;
+      margin-top: 20px;
+    }
+  }
+}
+

@@ -1,0 +1,79 @@
+.pagination {
+  text-align: center;
+  margin: 29px 0 0 0;
+  font-size: 0;
+  a {
+    display: inline-block;
+    vertical-align: top;
+    background: #FFF;
+    padding: 12px 17px;
+    color: $blue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin: 0 2px;
+    border: 2px solid $blue;
+    position: relative;
+    &:hover,
+    &.current {
+      background: $blue;
+      color: #FFF;
+    }
+    @include breakpoint(mobile) {
+      min-height: 46px;
+      span {
+        display: none;
+      }
+    }
+    &.prev {
+      padding: 12px 20px 12px 48px;
+      @include breakpoint(mobile) {
+        padding: 12px 20px;
+      }
+      &:after {
+        position: absolute;
+        background: url("../images/arrow-left-blue.png");
+        width: 20px;
+        height: 9px;
+        top:50%;
+        margin-top: -4px;
+        left: 15px;
+        content: "";
+        @include breakpoint(mobile) {
+          left: 10px;
+        }
+      }
+      &:hover {
+        &:after {
+          background-image: url("../images/arrow-left-white.png");
+        }
+      }
+    }
+    &.next {
+      padding: 12px 48px 12px 20px;
+      @include breakpoint(mobile) {
+        padding: 12px 20px;
+      }
+      &:after {
+        position: absolute;
+        background: url("../images/arrow-right-blue.png");
+        width: 20px;
+        height: 9px;
+        top:50%;
+        margin-top: -4px;
+        right: 15px;
+        content: "";
+        @include breakpoint(mobile) {
+          right: 10px;
+        }
+      }
+      &:hover {
+        &:after {
+          background-image: url("../images/arrow-right-white.png");
+        }
+      }
+    }
+  }
+}

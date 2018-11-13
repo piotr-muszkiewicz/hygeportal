@@ -1,0 +1,65 @@
+.finansowanie {
+  background: url("../images/home-bg.png") center no-repeat;
+  background-size: auto 100%;
+  margin-bottom: 85px;
+  @include breakpoint(mobile) {
+    background-size: auto 50%;
+  }
+  &__box {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding-left: 55px;
+    @include breakpoint(tablet) {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+    h3 {
+      font-size: 28px;
+      line-height: 32px;
+      margin: 19px 0 29px 0;
+      @include breakpoint(mobile) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      a {
+        color: $blue;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    ul {
+      margin: 20px 0 20px 10px;
+      padding: 0;
+      list-style: none;
+      li {
+        font-size: 16px;
+        padding: 0 0 8px 21px;
+        position: relative;
+        @include breakpoint(mobileonly) {
+          font-size: 14px;
+        }
+        &:after {
+          position: absolute;
+          left: 4px;
+          top: 9px;
+          @include breakpoint(mobileonly) {
+            top: 5px;
+          }
+          background: $blue;
+          width: 6px;
+          height: 9px;
+          content: "";
+        }
+      }
+    }
+  }
+}

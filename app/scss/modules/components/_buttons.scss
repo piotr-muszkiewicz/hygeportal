@@ -1,0 +1,82 @@
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  padding: 20px 63px 20px 25px;
+  text-decoration: none;
+  position: relative;
+  border: none;
+  @include breakpoint(tablet) {
+    padding: 15px 46px 15px 15px;
+    font-size: 13px;
+  }
+  &:after {
+    position: absolute;
+    right: 26px;
+    top:50%;
+    width: 21px;
+    height: 9px;
+    margin-top: -4px;
+    content: "";
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+    @include breakpoint(tablet) {
+      right: 16px;
+    }
+  }
+  &--no-arrow {
+    padding-right: 20px !important;
+    @include breakpoint(tablet) {
+      padding-right: 15px !important;
+    }
+    &:after {
+      display: none;
+    }
+  }
+  &--small {
+    padding: 15px 57px 15px 20px;
+  }
+  &:hover {
+    &:after {
+      right: 22px;
+      @include breakpoint(tablet) {
+        right: 12px;
+      }
+    }
+  }
+  &--blue {
+    color: #FFF;
+    background: #006eb7;
+    &:after {
+      background-image: url("../images/arrow-right-white.png");
+    }
+  }
+  &--white {
+    color: $blue;
+    background: #FFF;
+  }
+  &--transparent {
+    border: 2px solid $blue;
+    color: $blue;
+    &:after {
+      background-image: url("../images/arrow-right-blue.png");
+    }
+  }
+  &--pdf {
+    &:after {
+      font-family: 'FontAwesome', sans-serif;
+      content: "\f1c1 ";
+      background: no-repeat;
+      font-size: 14px;
+      margin-top: -6px;
+      right: 16px !important;
+    }
+    &:hover {
+      &:after {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

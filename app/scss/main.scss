@@ -1,0 +1,30 @@
+//----------------------------------*\
+// SETTINGS
+//----------------------------------*/
+@charset "UTF-8";
+
+//----------------------------------*\
+// COMPONENTS
+//----------------------------------*/
+
+
+@import "../fonts/templates_icon_css.css";
+@import "modules/base/base";
+
+@import "modules/components/buttons";
+@import "modules/components/header";
+@import "modules/components/footer";
+@import "modules/components/slider-img";
+@import "modules/components/popup";
+@import "modules/components/pagination";
+@import "modules/components/form-style";
+@import "modules/components/tooltip";
+
+@import "modules/themes/home";
+@import "modules/themes/about";
+@import "modules/themes/contact";
+@import "modules/themes/gallery";
+@import "modules/themes/pod-klucz";
+@import "modules/themes/finansowanie";
+@import "modules/themes/lokalizacja";
+@import "modules/themes/search";

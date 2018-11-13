@@ -1,0 +1,149 @@
+.contact {
+  padding: 65px 0;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint(laptop) {
+    padding-bottom: 0;
+  }
+  .gmap {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include breakpoint(laptop) {
+      bottom: auto;
+      height: 365px;
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+  &__inner {
+    background: #FFF;
+    width: 100%;
+    max-width: 930px;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(laptop) {
+      max-width: none;
+      margin: 300px -20px 0 -20px;
+      display: flex;
+      float: none;
+      width: auto;
+    }
+  }
+  &__left,
+  &__right {
+    width: 50%;
+    @include breakpoint(mobile) {
+      width: 100%;
+      padding: 30px 20px !important;
+    }
+  }
+  &__left {
+    padding: 38px 100px 0 34px;
+    h2 {
+      color: $blue;
+      text-transform: uppercase;
+      font-size: 48px;
+      margin: 0 0;
+      @include breakpoint(tablet) {
+        font-size: 36px;
+        line-height: normal;
+      }
+      @include breakpoint(mobile) {
+        font-size: 30px;
+        margin-bottom: 8px;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      margin: 14px 0 24px 0 ;
+      a {
+        color: $blue;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__right {
+    background: #f5f5f5;
+    padding: 42px 62px 62px 48px;
+    h3 {
+      color: $blue;
+      font-size: 24px;
+      margin: 0 0 22px 0;
+    }
+    .form-wrap {
+      margin: 0 0 0 0;
+      max-width: 290px;
+      padding-bottom: 16px;
+      position: relative;
+      .wpcf7-form-control-wrap {
+        position: static !important;
+      }
+      &.textarea {
+        max-width: 100%;
+      }
+      .wpcf7-not-valid-tip {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: red;
+        font-size: 11px;
+      }
+      label {
+        font-size: 14px;
+        color: #565656;
+        display: block;
+        margin: 0 0 5px 0 ;
+      }
+      input,textarea {
+        width: 100%;
+        border: none;
+        height: 42px;
+        border-bottom: 1px solid #d0d0d0;
+        &.wpcf7-not-valid {
+          border-bottom-color:red;
+        }
+      }
+      textarea {
+        height: 132px;
+      }
+    }
+    button {
+      margin-top: 10px;
+    }
+    div.wpcf7-response-output {
+      margin: 2em 0.5em 1em;
+      padding: 15px;
+      border: 2px solid $blue;
+      font-size: 14px;
+      color: $blue;
+    }
+
+    div.wpcf7-mail-sent-ok {
+      border: 2px solid $blue;
+    }
+
+    div.wpcf7-mail-sent-ng,
+    div.wpcf7-aborted {
+      border: 2px solid $blue;
+    }
+
+    div.wpcf7-spam-blocked {
+      border: 2px solid $blue;
+    }
+
+    div.wpcf7-validation-errors,
+    div.wpcf7-acceptance-missing {
+      border: 2px solid $blue;
+    }
+  }
+}
